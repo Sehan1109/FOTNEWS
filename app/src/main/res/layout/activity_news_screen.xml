@@ -91,7 +91,6 @@
         app:itemIconSize="30dp"
         app:itemIconTint="@color/black"
         app:itemTextColor="#020202"
-        app:labe
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
