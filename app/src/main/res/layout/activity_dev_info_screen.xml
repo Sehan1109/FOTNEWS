@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D9D9D9"
+    tools:context=".Dev_info_Screen">
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="412dp"
+        android:layout_height="453dp"
+        android:background="@drawable/details_squar"
+        android:backgroundTint="#8A2520"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="54dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="54dp"
+        android:layout_marginBottom="807dp"
+        android:fontFamily="@font/arial"
+        android:text="Developer Details"
+        android:textColor="#FDFCFC"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.22"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/CardSignIn"
+        android:layout_width="332dp"
+        android:layout_height="431dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginRight="43dp"
+        android:layout_marginBottom="132dp"
+        app:cardCornerRadius="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+
+        <TextView
+            android:id="@+id/devname"
+            android:layout_width="254dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="39dp"
+            android:layout_marginTop="33dp"
+            android:layout_marginRight="39dp"
+            android:layout_marginBottom="352dp"
+            android:background="@drawable/rounded_input"
+            android:fontFamily="@font/arial"
+            android:text="Name : "
+            android:textDirection="locale"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/stno"
+            android:layout_width="254dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="39dp"
+            android:layout_marginTop="110dp"
+            android:layout_marginRight="39dp"
+            android:layout_marginBottom="275dp"
+            android:background="@drawable/rounded_input"
+            android:fontFamily="@font/arial"
+            android:text="Student No : "
+            android:textDirection="locale"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/devstate"
+            android:layout_width="254dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="39dp"
+            android:layout_marginTop="187dp"
+            android:layout_marginRight="39dp"
+            android:layout_marginBottom="198dp"
+            android:background="@drawable/rounded_input"
+            android:fontFamily="@font/arial"
+            android:text="Personal Statement : "
+            android:textDirection="locale"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/version"
+            android:layout_width="254dp"
+            android:layout_height="46dp"
+            android:layout_marginLeft="39dp"
+            android:layout_marginTop="264dp"
+            android:layout_marginRight="39dp"
+            android:layout_marginBottom="121dp"
+            android:background="@drawable/rounded_input"
+            android:fontFamily="@font/arial"
+            android:text="Release Version : "
+            android:textDirection="locale"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/devback"
+            android:layout_width="127dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="364dp"
+            android:layout_marginLeft="103dp"
+            android:layout_marginRight="103dp"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="#89241F"
+            android:text="Back" />
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginRight="376dp"
+        android:layout_marginBottom="346dp"
+        android:tint="#F6F6F6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/backarrow" />
+</androidx.constraintlayout.widget.ConstraintLayout>
