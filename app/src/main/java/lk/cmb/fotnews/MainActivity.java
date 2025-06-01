@@ -1,6 +1,8 @@
 package lk.cmb.fotnews;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +22,11 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        new Handler().postDelayed(() -> {
+            Intent intent = new Intent(MainActivity.this, Signin_Screen.class);
+            startActivity(intent);
+            finish(); // Finish loading screen so user can't go back to it
+        }, 2000);
     }
 }
