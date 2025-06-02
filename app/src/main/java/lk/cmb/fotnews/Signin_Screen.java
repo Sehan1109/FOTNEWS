@@ -1,6 +1,9 @@
 package lk.cmb.fotnews;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +12,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class Signin_Screen extends AppCompatActivity {
+
+    TextView btnSignup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +24,12 @@ public class Signin_Screen extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        btnSignup = findViewById(R.id.signuplink);
+        btnSignup.setOnClickListener(v -> {
+            Intent intent = new Intent(Signin_Screen.this, Signup_Screen.class);
+            startActivity(intent);
         });
     }
 }
