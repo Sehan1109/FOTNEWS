@@ -52,6 +52,7 @@ public class Signin_Screen extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     Toast.makeText(this, "Login successfull", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(Signin_Screen.this, News_Screen.class);
+                    intent.putExtra("username", "Sehan");
                     startActivity(intent);
                 } else {
                     Exception e = task.getException();
