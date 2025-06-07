@@ -1,5 +1,6 @@
 package lk.cmb.fotnews;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +47,16 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         Glide.with(holder.imageView.getContext())
                 .load(item.imageUrl)
                 .into(holder.imageView);
+
+        // click listener to open the Newsbody screen
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), Newsbody_Screen.class);
+            intent.putExtra("title", item.title);
+            intent.putExtra("imageUrl", item.imageUrl);
+            intent.putExtra("content",item.content);
+            intent.putExtra("time",item.getTime());
+            v.getContext().startActivity(intent);
+        });
     }
 
     @Override

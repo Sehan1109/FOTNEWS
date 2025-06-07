@@ -1,8 +1,9 @@
 package lk.cmb.fotnews;
 
 public class NewsItem {
-    public String title;
+    public String title, content;
     public String imageUrl;
+    private String time;
 
     // Needed for Firebase automatic mapping
     public NewsItem() {}
@@ -11,10 +12,26 @@ public class NewsItem {
     public NewsItem(String title, String imageUrl) {
         this.title = title;
         this.imageUrl = imageUrl;
+        this.content = content;
     }
 
     public String getTitle() {
+        return title;
+    }
 
-        return "";
+    public String getContent() {
+        return content;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 }

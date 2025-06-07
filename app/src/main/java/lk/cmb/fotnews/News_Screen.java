@@ -22,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class News_Screen extends AppCompatActivity {
@@ -81,6 +82,7 @@ public class News_Screen extends AppCompatActivity {
                     NewsItem item = child.getValue(NewsItem.class);
                     newsList.add(item);
                 }
+                Collections.reverse(newsList);
                 adapter.notifyDataSetChanged();
             }
 
