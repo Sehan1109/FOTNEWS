@@ -3,7 +3,7 @@ package lk.cmb.fotnews;
 public class NewsItem {
     public String title, content;
     public String imageUrl;
-    private long timestamp;
+    private String time;
 
     // Needed for Firebase automatic mapping
     public NewsItem() {}
@@ -27,11 +27,11 @@ public class NewsItem {
         return imageUrl;
     }
 
-    public long getTimestamp() {
-        return timestamp;
+    public String getTime() {
+        return time;
     }
 
-    public void setTimestamp(long timestamp) {
-        this.timestamp = timestamp;
+    public void setTime(String time) {
+        this.time = time;
     }
 }
