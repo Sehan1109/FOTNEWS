@@ -5,122 +5,108 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_gradient"
-    tools:context=".Newsbody_Screen">
+    android:background="@drawable/background_gradient">
 
+    <!-- Back Button -->
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/backButton"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:layout_marginLeft="18dp"
-        android:layout_marginRight="369dp"
-        android:layout_marginBottom="813dp"
+        android:layout_margin="16dp"
         android:src="@drawable/backarrow"
         android:tint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.041"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- News Title -->
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
+        android:id="@+id/newsbodytitle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="54dp"
-        android:layout_marginTop="58dp"
-        android:layout_marginRight="18dp"
-        android:layout_marginBottom="800dp"
-        android:text="𝗘𝗧𝗦 𝗔𝗻𝗻𝘂𝗮𝗹 𝗚𝗲𝗻𝗲𝗿𝗮𝗹 𝗠𝗲𝗲𝘁𝗶𝗻𝗴 𝟮𝟬𝟮𝟱 – 𝗬𝗼𝘂'𝗿𝗲 𝗜𝗻𝘃𝗶𝘁𝗲𝗱! 🌿"
+        android:text="News Title Here"
         android:textColor="@color/white"
-        android:textSize="32sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.777"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginStart="58dp"
+        android:layout_marginEnd="48dp"
+        app:layout_constraintTop_toBottomOf="@id/backButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.428" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- News Image -->
     <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="314dp"
-        android:layout_height="264dp"
-        android:layout_marginLeft="49dp"
-        android:layout_marginTop="163dp"
-        android:layout_marginRight="49dp"
-        android:layout_marginBottom="500dp"
-        android:src="@drawable/logo"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/newsbodyimg"
+        android:layout_width="319dp"
+        android:layout_height="311dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.556"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        android:scaleType="centerCrop"/>
+        app:layout_constraintTop_toBottomOf="@id/newsbodytitle" />
 
+    <!-- Likes and Time -->
     <LinearLayout
-        android:layout_width="313dp"
-        android:layout_height="25dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="424dp"
-        android:layout_marginRight="48dp"
-        android:layout_marginBottom="427dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/infoLayout"
+        android:layout_width="319dp"
+        android:layout_height="46dp"
+        android:orientation="horizontal"
+        android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.555">
+        app:layout_constraintTop_toBottomOf="@id/newsbodyimg"
+        android:layout_marginTop="24dp">
 
         <ImageView
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:id="@+id/likebtn"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
             android:src="@drawable/likebtn"
             android:tint="@color/white" />
 
         <TextView
+            android:id="@+id/likecount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="4dp"
             android:text="20"
-            android:textColor="@color/white"
-            android:textSize="12sp" />
+            android:textColor="@color/white" />
 
         <TextView
+            android:id="@+id/timeView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1 min ago"
-            android:textColor="@color/white"
-            android:textSize="12sp"
-            android:layout_marginLeft="196dp" />
+            android:layout_marginStart="170dp"
+            android:text=" • 1 min ago"
+            android:textColor="@color/white" />
 
         <ImageView
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="8dp"
             android:src="@drawable/clock_icon"
-            android:tint="@color/white"
-            android:layout_marginLeft="8dp" />
-
+            android:tint="@color/white" />
     </LinearLayout>
 
+    <!-- ScrollView for content -->
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/scrollContent"
+        android:layout_width="317dp"
+        android:layout_height="242dp"
+        android:layout_margin="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.719">
+        app:layout_constraintTop_toBottomOf="@id/infoLayout"
+        android:layout_marginTop="24dp"
+        app:layout_constraintVertical_bias="0.123">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="48dp"
-            android:layout_marginRight="48dp"
-            android:text="🌿 𝗘𝗧𝗦 𝗔𝗻𝗻𝘂𝗮𝗹 𝗚𝗲𝗻𝗲𝗿𝗮𝗹 𝗠𝗲𝗲𝘁𝗶𝗻𝗴 𝟮𝟬𝟮𝟱 – 𝗬𝗼𝘂'𝗿𝗲 𝗜𝗻𝘃𝗶𝘁𝗲𝗱! 🌿  The AGM 25/26 of the Environmental Technology Society is 𝙝𝙖𝙥𝙥𝙚𝙣𝙞𝙣𝙜 𝙩𝙤𝙢𝙤𝙧𝙧𝙤𝙬! 🌱  📅 𝗗𝗮𝘁𝗲: 𝟮𝗻𝗱 𝗝𝘂𝗻𝗲 𝟮𝟬𝟮𝟱 🕛 𝗧𝗶𝗺𝗲: 𝟭𝟮 𝗣𝗠 𝗼𝗻𝘄𝗮𝗿𝗱𝘀 📍 𝗩𝗲𝗻𝘂𝗲: 𝗖𝟰𝟬𝟭 hall  We warmly invite all students of the Faculty of Technology to join this important event where we will appoint the new office bearers for the year 2025.  Be a part of shaping the future of our society and celebrating our achievements together! 💚  #EnvironmentalTechnologySociety #ETS #AGM25/26 #Facultyoftechnology #UniversityofColombo"
-            android:textColor="@color/white" />
+            android:id="@+id/newscontent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Long news content goes here..."
+            android:textColor="@color/white"
+            android:textSize="16sp" />
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
