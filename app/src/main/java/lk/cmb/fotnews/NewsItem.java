@@ -12,4 +12,9 @@ public class NewsItem {
         this.title = title;
         this.imageUrl = imageUrl;
     }
+
+    public String getTitle() {
+
+        return "";
+    }
 }

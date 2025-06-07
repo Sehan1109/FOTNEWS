@@ -1,9 +1,9 @@
 package lk.cmb.fotnews;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -29,6 +29,7 @@ public class News_Screen extends AppCompatActivity {
     RecyclerView newsRecycler;
     NewsAdapter adapter;
     List<NewsItem> newsList = new ArrayList<>();
+    List<NewsItem> fullNewsList = new ArrayList<>();
     TextView welcomemsg;
 
     @SuppressLint("NonConstantResourceId")
@@ -54,6 +55,23 @@ public class News_Screen extends AppCompatActivity {
         adapter = new NewsAdapter(newsList);
         newsRecycler.setAdapter(adapter);
 
+        //Search news
+        SearchView searchView = findViewById(R.id.searchView);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                filterList(newText);
+                return true;
+            }
+        });
+
+
+        //add news from database
         FirebaseDatabase.getInstance().getReference("news").addValueEventListener(new ValueEventListener() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
@@ -72,6 +90,7 @@ public class News_Screen extends AppCompatActivity {
             }
         });
 
+        //bottom navigation bar
         BottomNavigationView bottomNav = findViewById(R.id.bottomNav);
         bottomNav.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
             @Override
@@ -100,10 +119,12 @@ public class News_Screen extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 newsList.clear();
+                fullNewsList.clear();
                 for (DataSnapshot child : snapshot.getChildren()) {
                     NewsItem item = child.getValue(NewsItem.class);
                     if (item != null) {
-                        newsList.add(item); // ✅ add ALL news items regardless of type
+                        newsList.add(item);
+                        fullNewsList.add(item);
                     }
                 }
                 adapter.notifyDataSetChanged();
@@ -177,4 +198,19 @@ public class News_Screen extends AppCompatActivity {
             }
         });
     }
+
+    //Search news
+    private void filterList(String query) {
+        List<NewsItem> filteredList = new ArrayList<>();
+        for (NewsItem item : fullNewsList) {
+            if (item.getTitle() != null && item.getTitle().toLowerCase().contains(query.toLowerCase())) {
+                filteredList.add(item);
+            }
+        }
+
+        newsList.clear();
+        newsList.addAll(filteredList);
+        adapter.notifyDataSetChanged();
+    }
+
 }
