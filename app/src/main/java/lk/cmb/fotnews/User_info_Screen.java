@@ -86,6 +86,9 @@ public class User_info_Screen extends AppCompatActivity {
             EditText editName = dialogView.findViewById(R.id.editName);
             EditText editEmail = dialogView.findViewById(R.id.editEmail);
             Button okButton = dialogView.findViewById(R.id.okButton);
+            ImageView backcross = dialogView.findViewById(R.id.backcross);
+
+            backcross.setOnClickListener(v2 -> dialog.dismiss());
 
             editName.setText(username.getText().toString().replaceFirst("(?i)^Name *: *", "").trim());
             editEmail.setText(useremail.getText().toString().replaceFirst("(?i)^Email *: *", "").trim());
