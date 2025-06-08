@@ -57,7 +57,7 @@ public class Newsbody_Screen extends AppCompatActivity {
             String timeString = intent.getStringExtra("time");
 
             // Generate a unique post ID from title + time (must match how you store news)
-            postId = title + "_" + timeString; // You may use Firebase push ID instead in real apps
+            postId = title + "_" + timeString;
 
             // Setup UI
             imageView = findViewById(R.id.newsbodyimg);

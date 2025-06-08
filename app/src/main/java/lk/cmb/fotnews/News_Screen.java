@@ -164,6 +164,8 @@ public class News_Screen extends AppCompatActivity {
                         fullNewsList.add(item);
                     }
                 }
+                Collections.reverse(newsList);
+                Collections.reverse(fullNewsList);
                 adapter.notifyDataSetChanged();
             }
 
@@ -184,6 +186,7 @@ public class News_Screen extends AppCompatActivity {
                         newsList.add(item);
                     }
                 }
+                Collections.reverse(newsList);
                 adapter.notifyDataSetChanged();
             }
 
@@ -205,6 +208,7 @@ public class News_Screen extends AppCompatActivity {
                         newsList.add(item);
                     }
                 }
+                Collections.reverse(newsList);
                 adapter.notifyDataSetChanged();
             }
 
@@ -226,6 +230,7 @@ public class News_Screen extends AppCompatActivity {
                         newsList.add(item);
                     }
                 }
+                Collections.reverse(newsList);
                 adapter.notifyDataSetChanged();
             }
 

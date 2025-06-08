@@ -1,5 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/nav_all" android:icon="@drawable/all_news" android:title="All" />
+    <item android:id="@+id/nav_all" android:icon="@drawable/all_news"
+        android:title="All" />
     <item android:id="@+id/nav_academics" android:icon="@drawable/academic" android:title="Academics" />
     <item android:id="@+id/nav_sports" android:icon="@drawable/sports" android:title="Sports" />
     <item android:id="@+id/nav_events" android:icon="@drawable/events" android:title="Events" />
