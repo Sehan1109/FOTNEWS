@@ -18,6 +18,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -49,9 +51,25 @@ public class News_Screen extends AppCompatActivity {
         });
 
         String username = getIntent().getStringExtra("username");
-
         welcomemsg = findViewById(R.id.welcomemsg);
-        welcomemsg.setText("Hi, " + username);
+
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (currentUser != null) {
+            FirebaseDatabase.getInstance().getReference("users")
+                    .child(currentUser.getUid())
+                    .child("username")
+                    .addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            String username = snapshot.getValue(String.class);
+                            welcomemsg.setText("Hi, " + username);
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                        }
+                    });
+        }
 
         newsRecycler = findViewById(R.id.newsRecycler);
         newsRecycler.setLayoutManager(new LinearLayoutManager(this));
