@@ -1,8 +1,10 @@
 package lk.cmb.fotnews;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.TextView;
 
@@ -32,6 +34,7 @@ public class News_Screen extends AppCompatActivity {
     List<NewsItem> newsList = new ArrayList<>();
     List<NewsItem> fullNewsList = new ArrayList<>();
     TextView welcomemsg;
+    ImageView devinfo;
 
     @SuppressLint("NonConstantResourceId")
     @Override
@@ -55,6 +58,13 @@ public class News_Screen extends AppCompatActivity {
 
         adapter = new NewsAdapter(newsList);
         newsRecycler.setAdapter(adapter);
+
+        //navigate developer screen
+        devinfo = findViewById(R.id.devinfo);
+        devinfo.setOnClickListener(v -> {
+            Intent intent = new Intent(News_Screen.this, Dev_info_Screen.class);
+            startActivity(intent);
+        });
 
         //Search news
         SearchView searchView = findViewById(R.id.searchView);
