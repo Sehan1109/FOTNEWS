@@ -34,7 +34,7 @@ public class News_Screen extends AppCompatActivity {
     List<NewsItem> newsList = new ArrayList<>();
     List<NewsItem> fullNewsList = new ArrayList<>();
     TextView welcomemsg;
-    ImageView devinfo;
+    ImageView devinfo, userinfo;
 
     @SuppressLint("NonConstantResourceId")
     @Override
@@ -63,6 +63,13 @@ public class News_Screen extends AppCompatActivity {
         devinfo = findViewById(R.id.devinfo);
         devinfo.setOnClickListener(v -> {
             Intent intent = new Intent(News_Screen.this, Dev_info_Screen.class);
+            startActivity(intent);
+        });
+
+        //navigate user info
+        userinfo = findViewById(R.id.userinfo);
+        userinfo.setOnClickListener(v -> {
+            Intent intent = new Intent(News_Screen.this, User_info_Screen.class);
             startActivity(intent);
         });
 
