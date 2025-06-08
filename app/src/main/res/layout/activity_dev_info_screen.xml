@@ -8,152 +8,122 @@
     android:background="#D9D9D9"
     tools:context=".Dev_info_Screen">
 
-
+    <!-- Top Background Curve -->
     <View
-        android:id="@+id/view"
+        android:id="@+id/topBackground"
         android:layout_width="412dp"
         android:layout_height="453dp"
         android:background="@drawable/details_squar"
         android:backgroundTint="#8A2520"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="54dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="54dp"
-        android:layout_marginBottom="807dp"
-        android:fontFamily="@font/arial"
-        android:text="Developer Details"
-        android:textColor="#FDFCFC"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Back Arrow -->
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/backArrow"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/backarrow"
+        android:contentDescription="Back"
+        android:tint="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="45dp" />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/devtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Developer Details"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="36sp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.22"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp" />
 
+    <!-- Circular Profile Image -->
+    <ImageView
+        android:id="@+id/profileImage"
+        android:layout_width="186dp"
+        android:layout_height="186dp"
+        android:src="@drawable/logo"
+        app:layout_constraintTop_toBottomOf="@id/devtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerCrop" />
+
+    <!-- Card Container -->
     <androidx.cardview.widget.CardView
-        android:id="@+id/CardSignIn"
+        android:id="@+id/infoCard"
         android:layout_width="332dp"
-        android:layout_height="431dp"
-        android:layout_marginLeft="43dp"
-        android:layout_marginTop="132dp"
-        android:layout_marginRight="43dp"
-        android:layout_marginBottom="132dp"
-        app:cardCornerRadius="28dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        android:layout_marginHorizontal="24dp"
+        app:layout_constraintTop_toBottomOf="@id/profileImage"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintEnd_toEndOf="parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="39dp">
 
-        <TextView
-            android:id="@+id/devname"
-            android:layout_width="254dp"
-            android:layout_height="46dp"
-            android:layout_marginLeft="39dp"
-            android:layout_marginTop="33dp"
-            android:layout_marginRight="39dp"
-            android:layout_marginBottom="352dp"
-            android:background="@drawable/rounded_input"
-            android:fontFamily="@font/arial"
-            android:text="Name : "
-            android:textDirection="locale"
-            android:textStyle="bold" />
+            <TextView
+                android:layout_width="254dp"
+                android:layout_height="46dp"
+                android:background="@drawable/rounded_input"
+                android:padding="12dp"
+                android:text="Name : SEHAN MINDULA"
+                android:textStyle="bold"
+                android:layout_marginTop="31dp"/>
 
-        <TextView
-            android:id="@+id/stno"
-            android:layout_width="254dp"
-            android:layout_height="46dp"
-            android:layout_marginLeft="39dp"
-            android:layout_marginTop="110dp"
-            android:layout_marginRight="39dp"
-            android:layout_marginBottom="275dp"
-            android:background="@drawable/rounded_input"
-            android:fontFamily="@font/arial"
-            android:text="Student No : "
-            android:textDirection="locale"
-            android:textStyle="bold" />
+            <TextView
+                android:layout_width="254dp"
+                android:layout_height="46dp"
+                android:text="Student No : 2022t01533"
+                android:padding="12dp"
+                android:background="@drawable/rounded_input"
+                android:layout_marginTop="31dp" />
 
-        <TextView
-            android:id="@+id/devstate"
-            android:layout_width="254dp"
-            android:layout_height="46dp"
-            android:layout_marginLeft="39dp"
-            android:layout_marginTop="187dp"
-            android:layout_marginRight="39dp"
-            android:layout_marginBottom="198dp"
-            android:background="@drawable/rounded_input"
-            android:fontFamily="@font/arial"
-            android:text="Personal Statement : "
-            android:textDirection="locale"
-            android:textStyle="bold" />
+            <TextView
+                android:layout_width="254dp"
+                android:layout_height="46dp"
+                android:text="Personal statement : Think Different"
+                android:padding="12dp"
+                android:background="@drawable/rounded_input"
+                android:layout_marginTop="31dp" />
 
-        <TextView
-            android:id="@+id/version"
-            android:layout_width="254dp"
-            android:layout_height="46dp"
-            android:layout_marginLeft="39dp"
-            android:layout_marginTop="264dp"
-            android:layout_marginRight="39dp"
-            android:layout_marginBottom="121dp"
-            android:background="@drawable/rounded_input"
-            android:fontFamily="@font/arial"
-            android:text="Release Version : "
-            android:textDirection="locale"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/devback"
-            android:layout_width="127dp"
-            android:layout_height="43dp"
-            android:layout_marginTop="364dp"
-            android:layout_marginLeft="103dp"
-            android:layout_marginRight="103dp"
-            android:layout_marginBottom="24dp"
-            android:backgroundTint="#89241F"
-            android:text="Back" />
+            <TextView
+                android:layout_width="254dp"
+                android:layout_height="46dp"
+                android:text="Release version : 1.0.0"
+                android:padding="12dp"
+                android:background="@drawable/rounded_input"
+                android:layout_marginTop="31dp"
+                android:layout_marginBottom="31dp"/>
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginTop="59dp"
-        android:layout_marginRight="376dp"
-        android:layout_marginBottom="346dp"
-        android:tint="#F6F6F6"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+    <!-- Back Button -->
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:text="BACK"
+        android:backgroundTint="#89241F"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/infoCard"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/backarrow" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
