@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_input"
+    android:backgroundTint="#8A2520"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:elevation="6dp"
+    android:layout_margin="24dp"
+    android:backgroundTintMode="src_in"
+    android:clipToPadding="false"
+    android:clipChildren="false"
+    android:layoutDirection="ltr">
+    
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/cross_icon"
+        android:tint="@color/white"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="165dp" />
+
+    <TextView
+        android:id="@+id/editTitle"
+        android:text="EDIT"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_height="29dp"
+        android:layout_width="54dp"/>
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="user name"
+        android:background="@drawable/rounded_input"
+        android:layout_marginTop="20dp"
+        android:padding="12dp"
+        android:textColor="#000"/>
+
+    <EditText
+        android:id="@+id/editEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="email"
+        android:background="@drawable/rounded_input"
+        android:layout_marginTop="20dp"
+        android:padding="12dp"
+        android:textColor="#000"/>
+
+    <Button
+        android:id="@+id/okButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#fff"
+        android:textColor="#000"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"/>
+</LinearLayout>
