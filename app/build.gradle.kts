@@ -40,6 +40,8 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(libs.firebase.database)
     implementation(libs.firebase.auth)
+    implementation ("com.google.firebase:firebase-storage:21.0.2")
+
 
     implementation(libs.glide)
     annotationProcessor(libs.compiler)

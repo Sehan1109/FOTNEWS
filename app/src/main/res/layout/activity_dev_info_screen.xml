@@ -51,7 +51,7 @@
         android:id="@+id/profileImage"
         android:layout_width="186dp"
         android:layout_height="186dp"
-        android:src="@drawable/logo"
+        android:src="@drawable/devimg"
         app:layout_constraintTop_toBottomOf="@id/devtitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
