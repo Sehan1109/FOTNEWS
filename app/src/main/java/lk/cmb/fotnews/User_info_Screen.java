@@ -1,5 +1,6 @@
 package lk.cmb.fotnews;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -107,6 +108,30 @@ public class User_info_Screen extends AppCompatActivity {
 
                 username.setText(newName);
                 useremail.setText(newEmail);
+                dialog.dismiss();
+            });
+        });
+
+        //sign out
+        Button signoutBtn = findViewById(R.id.signoutbtn);
+        signoutBtn.setOnClickListener(v -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(User_info_Screen.this);
+            LayoutInflater inflater = getLayoutInflater();
+            View dialogView = inflater.inflate(R.layout.activity_user_info_signout, null);
+            builder.setView(dialogView);
+            AlertDialog dialog = builder.create();
+            dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+            dialog.show();
+
+            ImageView backcrossout = dialogView.findViewById(R.id.backcrossout);
+            Button yesButton = dialogView.findViewById(R.id.yesButton);
+
+            backcrossout.setOnClickListener(v2 -> dialog.dismiss());
+
+            yesButton.setOnClickListener(v1 -> {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(User_info_Screen.this, Signin_Screen.class));
+                finish();
                 dialog.dismiss();
             });
         });
