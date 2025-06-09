@@ -1,96 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:id="@+id/main"
+    android:background="@android:color/white"
+    android:gravity="center">
+
+    <LinearLayout
+        android:id="@+id/logoContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="182dp"
+            android:layout_height="182dp"
+            android:src="@drawable/logo"
+            android:scaleType="centerInside" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/appName"
-        android:layout_width="206dp"
+        android:layout_width="wrap_content"
         android:layout_height="46dp"
-        android:layout_marginLeft="105dp"
-        android:layout_marginTop="430dp"
-        android:layout_marginRight="105dp"
-        android:layout_marginBottom="311dp"
-        android:fontFamily="@font/arialroundedmtbold"
-        android:text="@string/now_fot"
-        android:textColor="#88241F"
+        android:layout_below="@id/logoContainer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Now@FoT"
+        android:textColor="#89241F"
         android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@+id/power2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.443"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="TextSizeCheck" />
+        android:textStyle="bold"
+        android:fontFamily="@font/arialroundedmtbold" />
 
     <TextView
-        android:id="@+id/power1"
+        android:id="@+id/footerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="750dp"
-        android:fontFamily="@font/arial"
-        android:text="@string/powered_by"
-        android:textSize="10sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="SmallSp" />
-
-    <TextView
-        android:id="@+id/power3"
-        android:layout_width="97dp"
-        android:layout_height="14dp"
-
-        android:fontFamily="@font/arial"
-        android:text="@string/university_of_colombo"
-        android:textSize="10sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/power2"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="SmallSp" />
-
-    <TextView
-        android:id="@+id/power2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/arial"
-        android:text="@string/faculty_of_technology"
-        android:textSize="10sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/power1"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="SmallSp,VisualLintBounds" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="182dp"
-        android:layout_height="182dp"
-        android:layout_marginLeft="115dp"
-        android:layout_marginTop="227dp"
-        android:layout_marginRight="115dp"
-        android:layout_marginBottom="508dp"
-        android:contentDescription="@string/logoimage"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/logo" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:text="Powered by\nFaculty of Technology\nUniversity of Colombo"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:textColor="#000000" />
+</RelativeLayout>
