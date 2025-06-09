@@ -1,115 +1,104 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:background="@drawable/background_gradient"
+    android:padding="24dp"
     tools:context=".Signup_Screen">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/CardSignIn"
-        android:layout_width="327dp"
-        android:layout_height="653dp"
-        android:layout_marginLeft="43dp"
-        android:layout_marginTop="132dp"
-        android:layout_marginRight="43dp"
-        android:layout_marginBottom="132dp"
-        app:cardCornerRadius="28dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+    <LinearLayout
+        android:id="@+id/cardContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_input"
+        android:layout_centerInParent="true"
+        android:padding="24dp"
+        android:layout_margin="16dp"
+        android:elevation="8dp"
+        android:gravity="center_horizontal"
+        android:backgroundTint="@android:color/white"
+        android:backgroundTintMode="src_in"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        android:clipToPadding="false"
+        android:clipChildren="false">
 
+        <!-- App Icon -->
         <ImageView
             android:id="@+id/applogoSignin"
-            android:layout_width="141dp"
-            android:layout_height="141dp"
-            android:layout_marginLeft="93dp"
-            android:layout_marginTop="60dp"
-            android:layout_marginRight="93dp"
-            android:layout_marginBottom="452dp"
-            app:srcCompat="@drawable/logo" />
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/logo"
+            android:layout_marginBottom="24dp"
+            android:layout_gravity="center" />
 
+        <!-- Username -->
         <EditText
             android:id="@+id/username"
-            android:layout_width="254dp"
-            android:layout_height="46dp"
-            android:layout_marginLeft="37dp"
-            android:layout_marginTop="225dp"
-            android:layout_marginRight="37dp"
-            android:layout_marginBottom="382dp"
-            android:background="@drawable/rounded_input"
-            android:ems="10"
-            android:fontFamily="@font/arial"
-            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:hint="user name"
-            android:textAlignment="center"
-            android:textSize="14sp" />
+            android:background="@drawable/rounded_input"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="#888"
+            android:textAlignment="center"/>
 
+        <!-- Password -->
         <EditText
             android:id="@+id/pass"
-            android:layout_width="254dp"
-            android:layout_height="46dp"
-            android:layout_marginLeft="37dp"
-            android:layout_marginTop="301dp"
-            android:layout_marginRight="37dp"
-            android:layout_marginBottom="306dp"
-            android:background="@drawable/rounded_input"
-            android:ems="10"
-            android:fontFamily="@font/arial"
-            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:hint="password"
-            android:textAlignment="center"
-            android:textSize="14sp" />
+            android:inputType="textPassword"
+            android:background="@drawable/rounded_input"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="#888"
+            android:textAlignment="center"/>
 
+        <!-- Confirm Password -->
         <EditText
             android:id="@+id/conpass"
-            android:layout_width="254dp"
-            android:layout_height="46dp"
-            android:layout_marginLeft="37dp"
-            android:layout_marginTop="377dp"
-            android:layout_marginRight="37dp"
-            android:layout_marginBottom="230dp"
-            android:background="@drawable/rounded_input"
-            android:ems="10"
-            android:fontFamily="@font/arial"
-            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:hint="confirm password"
-            android:textAlignment="center"
-            android:textSize="14sp" />
+            android:inputType="textPassword"
+            android:background="@drawable/rounded_input"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="#888"
+            android:textAlignment="center"/>
 
+        <!-- Email -->
         <EditText
             android:id="@+id/mail"
-            android:layout_width="254dp"
-            android:layout_height="46dp"
-            android:layout_marginLeft="37dp"
-            android:layout_marginTop="453dp"
-            android:layout_marginRight="37dp"
-            android:layout_marginBottom="154dp"
-            android:background="@drawable/rounded_input"
-            android:ems="10"
-            android:fontFamily="@font/arial"
-            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:hint="email"
-            android:textAlignment="center"
-            android:textSize="14sp" />
+            android:inputType="textEmailAddress"
+            android:background="@drawable/rounded_input"
+            android:padding="12dp"
+            android:layout_marginBottom="24dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="#888"
+            android:textAlignment="center"/>
 
+        <!-- Submit Button -->
         <Button
             android:id="@+id/submitbtn"
-            android:layout_width="157dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="85dp"
-            android:layout_marginTop="554dp"
-            android:layout_marginRight="85dp"
-            android:layout_marginBottom="59dp"
-            android:backgroundTint="#89241F"
-            android:fontFamily="@font/arialroundedmtbold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="SUBMIT"
-            android:textColor="@color/white" />
-
-    </androidx.cardview.widget.CardView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+            android:backgroundTint="#89241F"
+            android:textColor="@android:color/white"
+            android:paddingLeft="32dp"
+            android:paddingRight="32dp"
+            android:layout_gravity="center" />
+    </LinearLayout>
+</RelativeLayout>
