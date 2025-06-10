@@ -59,7 +59,10 @@
             android:layout_marginBottom="12dp"
             android:textColor="@android:color/black"
             android:textColorHint="#888"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:drawableEnd="@drawable/visibility_off"
+            android:drawableTint="@color/black"/>
+
 
         <!-- Confirm Password -->
         <EditText
@@ -73,6 +76,8 @@
             android:layout_marginBottom="12dp"
             android:textColor="@android:color/black"
             android:textColorHint="#888"
+            android:drawableEnd="@drawable/visibility_off"
+            android:drawableTint="@color/black"
             android:textAlignment="center"/>
 
         <!-- Email -->

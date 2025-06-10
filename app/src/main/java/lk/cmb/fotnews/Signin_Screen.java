@@ -1,7 +1,10 @@
 package lk.cmb.fotnews;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
+import android.view.MotionEvent;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -21,6 +24,7 @@ public class Signin_Screen extends AppCompatActivity {
 
     TextView btnSignup, forgotpass;
     FirebaseAuth mAuth;
+    EditText emailEditText, passEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +39,12 @@ public class Signin_Screen extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        EditText emailEditText = findViewById(R.id.username);
-        EditText passEditText = findViewById(R.id.pass);
+        emailEditText = findViewById(R.id.username);
+        passEditText = findViewById(R.id.pass);
         Button loginbtn = findViewById(R.id.loginbtn);
+
+        // 👁️ Add eye icon toggle for password field
+        togglePasswordVisibility(passEditText);
 
         loginbtn.setOnClickListener(v -> {
             String email = emailEditText.getText().toString().trim();
@@ -50,7 +57,7 @@ public class Signin_Screen extends AppCompatActivity {
 
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
-                    Toast.makeText(this, "Login successfull", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(Signin_Screen.this, News_Screen.class);
                     intent.putExtra("username", "Sehan");
                     startActivity(intent);
@@ -88,6 +95,27 @@ public class Signin_Screen extends AppCompatActivity {
         btnSignup.setOnClickListener(v -> {
             Intent intent = new Intent(Signin_Screen.this, Signup_Screen.class);
             startActivity(intent);
+        });
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    private void togglePasswordVisibility(EditText editText) {
+        editText.setOnTouchListener((v, event) -> {
+            final int DRAWABLE_END = 2; // Right-side drawable
+            if (event.getAction() == MotionEvent.ACTION_UP) {
+                if (event.getRawX() >= (editText.getRight() - editText.getCompoundDrawables()[DRAWABLE_END].getBounds().width())) {
+                    if (editText.getInputType() == (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD)) {
+                        editText.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                        editText.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.visibility_eye, 0);
+                    } else {
+                        editText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                        editText.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.visibility_off, 0);
+                    }
+                    editText.setSelection(editText.getText().length());
+                    return true;
+                }
+            }
+            return false;
         });
     }
 }
