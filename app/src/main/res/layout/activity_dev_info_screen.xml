@@ -14,7 +14,7 @@
 
         <View
             android:id="@+id/topBackground"
-            android:layout_width="412dp"
+            android:layout_width="match_parent"
             android:layout_height="453dp"
             android:background="@drawable/details_squar"
             android:backgroundTint="#8A2520"
